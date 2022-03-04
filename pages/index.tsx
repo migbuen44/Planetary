@@ -9,6 +9,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Planetary</title>
       </Head>
+      <h1 className={styles.title}>Planetary</h1>
+      <div className={styles.carousel_container}></div>
     </div>
   )
 }
