@@ -1,14 +1,27 @@
 import type { NextPage } from 'next'
 import styles from './carousel.module.scss'
+import type { PlanetCardData } from '../../types/planets'
 
-const PlanetCardProps = {
-  planet
+interface PlanetCardProps {
+  planet: PlanetCardData,
 }
 
-const PlanetCard: NextPage = ({ planet }) => {
+const PlanetCard: NextPage<PlanetCardProps> = ({ planet }) => {
+  const {
+    name,
+    AU,
+    surface_area,
+    volume,
+    mass,
+  } = planet;
+
   return(
-    <div>
-      PlanetCard
+    <div className={styles.card}>
+      <div>{name}</div>
+      <div>{AU}</div>
+      <div>{surface_area}</div>
+      <div>{volume}</div>
+      <div>{mass}</div>
     </div>
   )
 }

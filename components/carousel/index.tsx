@@ -1,5 +1,6 @@
 import styles from './carousel.module.scss'
 import ReactCardCarousel from 'react-card-carousel'
+import PlanetCard from './planetCard'
 
 interface CarouselProps {
   planetCardData: []
@@ -10,9 +11,9 @@ const Carousel = ({ planetCardData } : CarouselProps) => {
     <div className={styles.container}>
       {/* Carousel */}
       <ReactCardCarousel>
-        <div className={styles.card}>First Card</div>
-        <div className={styles.card}>Second Card</div>
-        <div className={styles.card}>Third Card</div>
+        {planetCardData.map((planet, idx) =>
+          <PlanetCard planet={planet} key={`planet-${idx}`}/>
+        )}
       </ReactCardCarousel>
     </div>
   )
