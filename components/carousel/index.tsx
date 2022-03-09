@@ -6,7 +6,7 @@ const Carousel: NextPage = () => {
   return (
     <div className={styles.container}>
       {/* Carousel */}
-      <ReactCardCarousel className={styles.carousel}>
+      <ReactCardCarousel>
         <div className={styles.card}>First Card</div>
         <div className={styles.card}>Second Card</div>
         <div className={styles.card}>Third Card</div>
