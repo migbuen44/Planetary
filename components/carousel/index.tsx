@@ -1,8 +1,23 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import styles from './carousel.module.scss'
 import ReactCardCarousel from 'react-card-carousel'
+import { getSortedPlanetCardData } from '../../lib/planets'
 
-const Carousel: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const planetCardData = getSortedPlanetCardData();
+
+  return {
+    props: {
+      planetCardData
+    }
+  }
+}
+
+interface CarouselProps {
+  planetCardData: []
+}
+
+const Carousel: NextPage<CarouselProps> = ({ planetCardData }) => {
   return (
     <div className={styles.container}>
       {/* Carousel */}

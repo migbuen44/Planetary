@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import styles from './carousel.module.scss'
 
 const PlanetCardProps = {
-  planet:
+  planet
 }
 
 const PlanetCard: NextPage = ({ planet }) => {
