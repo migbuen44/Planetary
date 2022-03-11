@@ -1,0 +1,17 @@
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 999;
+}
+
+.menu_bar {
+  border: 1px white solid;
+  position: fixed;
+  height: 100%;
+  background: black;
+  right: 0;
+  width: 70vw;
+}
