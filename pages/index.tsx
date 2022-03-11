@@ -4,6 +4,8 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Carousel from '../components/carousel';
 import { getSortedPlanetCardData } from '../lib/planets'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars} from '@fortawesome/free-solid-svg-icons'
 
 export const getStaticProps: GetStaticProps = async () => {
   const planetCardData = getSortedPlanetCardData();
@@ -25,7 +27,12 @@ const Home: NextPage<HomeProps> = ({ planetCardData }) => {
       <Head>
         <title>Planetary</title>
       </Head>
-      <h1 className={styles.title}>Planetary</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Planetary</h1>
+        <button className={styles.menu_button}>
+          <FontAwesomeIcon icon={faBars} className={styles.bar_icon}/>
+        </button>
+      </div>
       {/* <div className={styles.carousel_container}>Carousel</div> */}
       <Carousel planetCardData={planetCardData}/>
     </div>
