@@ -4,7 +4,11 @@ import { faBars} from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import MenuBar from '../menuBar'
 
-const Header = () => {
+interface HeaderProps {
+  menuBarData: [],
+}
+
+const Header = ({ menuBarData } : HeaderProps) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   return (
     <div className={styles.container}>
@@ -12,7 +16,7 @@ const Header = () => {
       <button className={styles.menu_button} onClick={()=>setMenuIsOpen(true)}>
         <FontAwesomeIcon icon={faBars} className={styles.bar_icon}/>
       </button>
-      {menuIsOpen? <MenuBar closeMenuBar={()=>setMenuIsOpen(false)}/> : <></>}
+      {menuIsOpen? <MenuBar menuBarData={menuBarData} closeMenuBar={()=>setMenuIsOpen(false)}/> : <></>}
     </div>
   )
 }

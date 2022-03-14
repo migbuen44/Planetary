@@ -8,25 +8,28 @@ import Header from '../components/header'
 
 export const getStaticProps: GetStaticProps = async () => {
   const planetCardData = getSortedPlanetCardData();
+  const menuBarData = planetCardData.map(planet => planet.name);
 
   return {
     props: {
-      planetCardData
+      planetCardData,
+      menuBarData,
     }
   }
 }
 
 interface HomeProps {
-  planetCardData: []
+  planetCardData: [],
+  menuBarData: [],
 }
 
-const Home: NextPage<HomeProps> = ({ planetCardData }) => {
+const Home: NextPage<HomeProps> = ({ planetCardData, menuBarData }) => {
   return (
     <div className={styles.container}>
       <Head>
         <title>Planetary</title>
       </Head>
-      <Header />
+      <Header menuBarData={menuBarData}/>
       <Carousel planetCardData={planetCardData}/>
     </div>
   )
