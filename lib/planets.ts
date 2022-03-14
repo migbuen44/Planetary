@@ -25,3 +25,10 @@ export const getSortedPlanetCardData = () => {
 
   return planetFilesContentSorted;
 }
+
+export const getSortedMenuBarData = () => {
+  const cardData = getSortedPlanetCardData();
+  const sortedMenuBarData = cardData.map(data => data.name);
+
+  return sortedMenuBarData;
+}

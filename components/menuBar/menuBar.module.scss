@@ -15,9 +15,17 @@
   flex-grow: 1;
 }
 
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .menu_bar {
   border: 1px white solid;
-  // position: fixed;
   height: 100%;
   background: black;
   right: 0;
