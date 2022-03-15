@@ -4,29 +4,32 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Carousel from '../components/carousel';
 import { getSortedPlanetCardData } from '../lib/planets'
+import Header from '../components/header'
 
 export const getStaticProps: GetStaticProps = async () => {
   const planetCardData = getSortedPlanetCardData();
+  const menuBarData = planetCardData.map(planet => planet.name);
 
   return {
     props: {
-      planetCardData
+      planetCardData,
+      menuBarData,
     }
   }
 }
 
 interface HomeProps {
-  planetCardData: []
+  planetCardData: [],
+  menuBarData: [],
 }
 
-const Home: NextPage<HomeProps> = ({ planetCardData }) => {
+const Home: NextPage<HomeProps> = ({ planetCardData, menuBarData }) => {
   return (
     <div className={styles.container}>
       <Head>
         <title>Planetary</title>
       </Head>
-      <h1 className={styles.title}>Planetary</h1>
-      {/* <div className={styles.carousel_container}>Carousel</div> */}
+      <Header menuBarData={menuBarData}/>
       <Carousel planetCardData={planetCardData}/>
     </div>
   )
