@@ -3,7 +3,7 @@ import * as path from 'path'
 
 const planetsDirectory = path.join(process.cwd(), 'planets');
 
-export const getSortedPlanetCardData = () => {
+export const getSortedPlanetsData = () => {
   const fullPath = path.join(planetsDirectory, 'card_data');
   const planetFiles = fs.readdirSync(fullPath);
   const planetFilesContent = planetFiles.map((fileName) => {
@@ -24,4 +24,20 @@ export const getSortedPlanetCardData = () => {
   })
 
   return planetFilesContentSorted;
+}
+
+export const getAllPlanetIds = () => {
+  const fullPath = path.join(planetsDirectory, 'card_data');
+  const fileNames = fs.readdirSync(fullPath);
+  const planetIds = fileNames.map(fileName => {
+    return {
+      params: {
+        id: fileName.replace('.json', '')
+      }
+    }
+  });
+
+  console.log('planetIds:' , planetIds);
+
+  return planetIds;
 }
