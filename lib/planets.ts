@@ -1,5 +1,8 @@
-import *  as fs from 'fs'
-import * as path from 'path'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { remark } from 'remark'
+import html from 'remark-html'
 
 const planetsDirectory = path.join(process.cwd(), 'planets');
 
@@ -37,7 +40,24 @@ export const getAllPlanetIds = () => {
     }
   });
 
-  console.log('planetIds:' , planetIds);
-
   return planetIds;
+}
+
+export const getPlanetData = async (id : string) => {
+  const fullPath = path.join(planetsDirectory, 'page_data');
+  const filePath = path.join(fullPath, id + '.md');
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+  const matterResult = matter(fileContent);
+
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+
+  const contentHtml = processedContent.toString();
+
+  return {
+    id,
+    contentHtml
+  }
 }

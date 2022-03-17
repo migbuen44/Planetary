@@ -1,19 +1,4 @@
-import { getAllPlanetIds } from '../../lib/planets'
-
-const Planet = ({params} : any) => {
-  return (
-    <div style={{color: 'black'}}>Planet - {params.id}</div>
-  )
-}
-
-export const getStaticProps = ({ params } : any) => {
-  console.log('params: ', params);
-  return {
-    props: {
-      params
-    }
-  }
-}
+import { getAllPlanetIds, getPlanetData } from '../../lib/planets'
 
 export const getStaticPaths = async () => {
   const paths = getAllPlanetIds();
@@ -21,6 +6,21 @@ export const getStaticPaths = async () => {
     paths,
     fallback: false,
   }
+}
+
+export const getStaticProps = async ({ params } : any) => {
+  const planetData = await getPlanetData(params.id);
+  return {
+    props: {
+      params
+    }
+  }
+}
+
+const Planet = ({params} : any) => {
+  return (
+    <div style={{color: 'black'}}>Planet - {params.id}</div>
+  )
 }
 
 export default Planet;
