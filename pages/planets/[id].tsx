@@ -12,14 +12,19 @@ export const getStaticProps = async ({ params } : any) => {
   const planetData = await getPlanetData(params.id);
   return {
     props: {
-      params
+      planetData,
     }
   }
 }
 
-const Planet = ({params} : any) => {
+const Planet = ({ planetData } : any) => {
+  const { id, contentHtml } = planetData;
+  // console.log('planetData: ', planetData)
   return (
-    <div style={{color: 'black'}}>Planet - {params.id}</div>
+    <div>
+      <div style={{color: 'black'}}>Planet - {id}</div>
+      <div style={{color: 'black'}} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+    </div>
   )
 }
 
