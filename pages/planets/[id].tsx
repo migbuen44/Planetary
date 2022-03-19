@@ -1,7 +1,6 @@
 import styles from '../../styles/Planet.module.scss';
 import { getAllPlanetIds, getPlanetData, getSortedPlanetsData } from '../../lib/planets'
 import Header from '../../components/header';
-import { DefaultDeserializer } from 'v8';
 
 export const getStaticPaths = async () => {
   const paths = getAllPlanetIds();
@@ -15,17 +14,21 @@ export const getStaticProps = async ({ params } : any) => {
   const planetData = await getPlanetData(params.id);
   const sortedPlanetsData = getSortedPlanetsData();
   const menuBarData = sortedPlanetsData.map(data => data.name);
+  const cardData = sortedPlanetsData.find(data => {
+    return data.name.toLowerCase() === params.id.toLowerCase();
+  });
   return {
     props: {
       planetData,
       menuBarData,
+      cardData,
     }
   }
 }
 
-const Planet = ({ planetData, menuBarData } : any) => {
+const Planet = ({ planetData, menuBarData, cardData } : any) => {
   const { id, contentHtml } = planetData;
-  // console.log('planetData: ', planetData)
+  // console.log('cardData: ', cardData);
   const planetTitle = id.replace(id[0], id[0].toUpperCase());
   return (
     <div className={styles.container}>
