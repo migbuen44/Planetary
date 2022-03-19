@@ -2,7 +2,7 @@
 name: 'Venus'
 ---
 
-## Description
+### Description
 
 Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the brightest natural object in Earth's night sky after the Moon, Venus can cast shadows and can be visible to the naked eye in broad daylight.[18][19] Venus's orbit is smaller than that of Earth, and thus can be seen near the Sun in the morning or evening. Venus orbits the Sun every 224.7 Earth days.[20] It has a synodic day length of 117 Earth days and a sidereal rotation period of 243 Earth days. As a consequence, it takes longer to rotate about its axis than any other planet in the Solar System, and does so in the opposite direction to all but Uranus. This means that the Sun rises from its western horizon and sets in its east.[21] Venus does not have any moons, a distinction it shares only with Mercury among the planets in the Solar System.[22]
 
