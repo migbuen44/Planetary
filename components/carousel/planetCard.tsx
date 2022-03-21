@@ -1,27 +1,26 @@
-import type { NextPage } from 'next'
 import styles from './carousel.module.scss'
 import type { PlanetCardData } from '../../types/planets'
+import PlanetInfo from './planetInfo';
 
 interface PlanetCardProps {
   planet: PlanetCardData,
+  isCard: boolean,
 }
 
-const PlanetCard: NextPage<PlanetCardProps> = ({ planet }) => {
+const PlanetCard = ({ planet, isCard } : PlanetCardProps) => {
   const {
     name,
-    AU,
-    surface_area,
-    volume,
-    mass,
   } = planet;
 
-  return(
+  if(isCard) return(
     <div className={styles.card}>
-      <div>{name}</div>
-      <div>{AU}</div>
-      <div>{surface_area}</div>
-      <div>{volume}</div>
-      <div>{mass}</div>
+      <PlanetInfo planet={planet} isCard/>
+    </div>
+  )
+
+  return (
+    <div className={styles.card_on_page}>
+      <PlanetInfo planet={planet} isCard={false}/>
     </div>
   )
 }

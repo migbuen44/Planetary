@@ -1,6 +1,7 @@
 import styles from '../../styles/Planet.module.scss';
 import { getAllPlanetIds, getPlanetData, getSortedPlanetsData } from '../../lib/planets'
 import Header from '../../components/header';
+import PlanetCard from '../../components/carousel/planetCard';
 
 export const getStaticPaths = async () => {
   const paths = getAllPlanetIds();
@@ -34,6 +35,7 @@ const Planet = ({ planetData, menuBarData, cardData } : any) => {
     <div className={styles.container}>
       <Header menuBarData={menuBarData}/>
       <h2 className={styles.planet_title}>{planetTitle}</h2>
+      <PlanetCard planet={cardData} isCard={false}/>
       <div className={styles.body_container} dangerouslySetInnerHTML={{__html: contentHtml}}/>
     </div>
   )

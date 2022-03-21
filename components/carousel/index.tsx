@@ -12,7 +12,7 @@ const Carousel = ({ planetCardData } : CarouselProps) => {
       {/* Carousel */}
       <ReactCardCarousel>
         {planetCardData.map((planet, idx) =>
-          <PlanetCard planet={planet} key={`planet-${idx}`}/>
+          <PlanetCard planet={planet} key={`planet-${idx}`} isCard/>
         )}
       </ReactCardCarousel>
     </div>
