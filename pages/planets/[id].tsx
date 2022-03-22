@@ -32,8 +32,11 @@ const Planet = ({ planetData, menuBarData, cardData } : any) => {
   // console.log('cardData: ', cardData);
   const planetTitle = id.replace(id[0], id[0].toUpperCase());
   return (
+
     <div className={styles.container}>
       <Header menuBarData={menuBarData}/>
+      <span>Hi, this is a math string 10<sup>4</sup></span>
+      <div>+++++++++++</div>
       <h2 className={styles.planet_title}>{planetTitle}</h2>
       <PlanetCard planet={cardData} isCard={false}/>
       <div className={styles.body_container} dangerouslySetInnerHTML={{__html: contentHtml}}/>

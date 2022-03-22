@@ -17,10 +17,22 @@ const PlanetInfo = ({ planet, isCard } : PlanetInfoProps) => {
   return (
     <div>
       {isCard ? <div>{name}</div> : <></>}
-      <div>{AU}</div>
-      <div>{surface_area}</div>
-      <div>{volume}</div>
-      <div>{mass}</div>
+      <div className={styles.planet_info}>
+        <div>AU</div>
+        <div>{AU}</div>
+      </div>
+      <div className={styles.planet_info}>
+        <div>Surface Area</div>
+        <div>{surface_area}</div>
+      </div>
+      <div className={styles.planet_info}>
+        <div>Volume</div>
+        <div>{volume}</div>
+      </div>
+      <div className={styles.planet_info}>
+        <div>Mass</div>
+        <div>{mass}</div>
+      </div>
     </div>
   )
 }
