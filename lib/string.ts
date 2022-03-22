@@ -8,7 +8,7 @@ export const convertCaretToHtml = (string: string) => {
     const currentChar = string[i];
     if (isNumber) {
       let charAsNumber = Number(currentChar);
-      if(!Number(currentChar) || currentChar === ' ') {
+      if(isNaN(Number(currentChar)) || currentChar === ' ') {
         isNumber = false;
         firstSubStrIdx = i;
         const numberToSup = string.substring(lastCaretIdx+1, i);
@@ -26,7 +26,7 @@ export const convertCaretToHtml = (string: string) => {
     }
 
     if (i === string.length) {
-      if(Number(string[i - 1])) continue;
+      if(!isNaN(Number(string[i - 1]))) continue;
       const stringToSpan = string.substring(firstSubStrIdx, i)
       currentSpan = `<span>${stringToSpan}</span>`
       elementsArr.push(currentSpan);

@@ -1,5 +1,6 @@
 import styles from './carousel.module.scss'
 import type { PlanetCardData } from '../../types/planets'
+import { convertCaretToHtml } from '../../lib/string';
 
 interface PlanetInfoProps {
   planet: PlanetCardData,
@@ -14,6 +15,12 @@ const PlanetInfo = ({ planet, isCard } : PlanetInfoProps) => {
     volume,
     mass,
   } = planet;
+
+  const surface_areaHtml = convertCaretToHtml(surface_area);
+  const volumeHtml = convertCaretToHtml(volume);
+  const massHtml = convertCaretToHtml(mass);
+
+
   return (
     <div>
       {isCard ? <div>{name}</div> : <></>}
@@ -23,15 +30,15 @@ const PlanetInfo = ({ planet, isCard } : PlanetInfoProps) => {
       </div>
       <div className={styles.planet_info}>
         <div>Surface Area</div>
-        <div>{surface_area}</div>
+        <div dangerouslySetInnerHTML={{__html: surface_areaHtml}}></div>
       </div>
       <div className={styles.planet_info}>
         <div>Volume</div>
-        <div>{volume}</div>
+        <div dangerouslySetInnerHTML={{__html: volumeHtml}}></div>
       </div>
       <div className={styles.planet_info}>
         <div>Mass</div>
-        <div>{mass}</div>
+        <div dangerouslySetInnerHTML={{__html: massHtml}}></div>
       </div>
     </div>
   )
