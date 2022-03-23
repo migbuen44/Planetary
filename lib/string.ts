@@ -7,7 +7,6 @@ export const convertCaretToHtml = (string: string) => {
   for (let i = 0; i < string.length + 1; i++) {
     const currentChar = string[i];
     if (isNumber) {
-      let charAsNumber = Number(currentChar);
       if(isNaN(Number(currentChar)) || currentChar === ' ') {
         isNumber = false;
         firstSubStrIdx = i;
