@@ -1,4 +1,4 @@
-import styles from './carousel.module.scss'
+import styles from './planetData.module.scss'
 import type { PlanetCardData } from '../../types/planets'
 import { convertCaretToHtml } from '../../lib/string';
 
