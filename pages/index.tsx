@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Carousel from '../components/carousel';
-import { getSortedPlanetCardData } from '../lib/planets'
+import { getSortedPlanetsData } from '../lib/planets'
 import Header from '../components/header'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const planetCardData = getSortedPlanetCardData();
+  const planetCardData = getSortedPlanetsData();
   const menuBarData = planetCardData.map(planet => planet.name);
 
   return {

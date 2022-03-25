@@ -1,27 +1,25 @@
-import type { NextPage } from 'next'
 import styles from './carousel.module.scss'
+import Image from 'next/image'
 import type { PlanetCardData } from '../../types/planets'
+import PlanetData from '../misc/planetData';
 
 interface PlanetCardProps {
   planet: PlanetCardData,
 }
 
-const PlanetCard: NextPage<PlanetCardProps> = ({ planet }) => {
+const imageDirectory = '/images/planet_card_images'
+
+const PlanetCard = ({ planet } : PlanetCardProps) => {
   const {
     name,
-    AU,
-    surface_area,
-    volume,
-    mass,
   } = planet;
 
   return(
     <div className={styles.card}>
-      <div>{name}</div>
-      <div>{AU}</div>
-      <div>{surface_area}</div>
-      <div>{volume}</div>
-      <div>{mass}</div>
+      <div className={styles.image_container}>
+          <Image src={`${imageDirectory}/${name}.png`} layout="responsive" objectFit="contain" width={100} height={100}/>
+      </div>
+      <PlanetData planet={planet} isCard/>
     </div>
   )
 }

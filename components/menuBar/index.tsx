@@ -1,8 +1,9 @@
 import styles from './menuBar.module.scss'
+import Link from 'next/link'
 
 interface MenuBarProps {
   closeMenuBar: Function,
-  menuBarData: [],
+  menuBarData: string[],
 }
 
 const MenuBar = ({ closeMenuBar, menuBarData } : MenuBarProps) => {
@@ -15,9 +16,11 @@ const MenuBar = ({ closeMenuBar, menuBarData } : MenuBarProps) => {
         </div>
         <div className={styles.planet_names_container}>
           {menuBarData.map(planet =>
-            <div className={styles.planet_name} key={planet}>
-              <div>{planet}</div>
-            </div>
+            (<Link href={`/planets/${planet.toLowerCase()}`} key={planet}>
+              <div className={styles.planet_name} onClick={()=>closeMenuBar()}>
+                <div>{planet}</div>
+              </div>
+            </Link>)
           )}
         </div>
       </div>
