@@ -22,7 +22,6 @@ const PlanetInfo = ({ planet } : PlanetInfoProps) => {
 
   return (
     <div className={styles.container}>
-      <div>{name}</div>
       <div className={styles.planet_info}>
         <div>AU</div>
         <div>{AU}</div>
