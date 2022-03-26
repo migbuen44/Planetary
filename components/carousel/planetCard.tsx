@@ -19,7 +19,9 @@ const PlanetCard = ({ planet } : PlanetCardProps) => {
       <div className={styles.image_container}>
           <Image src={`${imageDirectory}/${name}.png`} layout="responsive" objectFit="contain" width={100} height={100}/>
       </div>
-      <PlanetData planet={planet} isCard/>
+      <div className={styles.planet_data_container}>
+        <PlanetData planet={planet}/>
+      </div>
     </div>
   )
 }

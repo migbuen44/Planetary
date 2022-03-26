@@ -9,7 +9,7 @@ interface PlanetInfoSectionProps {
 const PlanetInfoSection = ({ planet } : PlanetInfoSectionProps) => {
   return (
     <div className={styles.container}>
-      <PlanetData planet={planet} isCard={false}/>
+      <PlanetData planet={planet}/>
     </div>
   )
 }

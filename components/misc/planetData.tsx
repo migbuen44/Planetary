@@ -4,10 +4,9 @@ import { convertCaretToHtml } from '../../lib/string';
 
 interface PlanetInfoProps {
   planet: PlanetCardData,
-  isCard: boolean,
 }
 
-const PlanetInfo = ({ planet, isCard } : PlanetInfoProps) => {
+const PlanetInfo = ({ planet } : PlanetInfoProps) => {
   const {
     name,
     AU,
@@ -22,8 +21,8 @@ const PlanetInfo = ({ planet, isCard } : PlanetInfoProps) => {
 
 
   return (
-    <div>
-      {isCard ? <div>{name}</div> : <></>}
+    <div className={styles.container}>
+      <div>{name}</div>
       <div className={styles.planet_info}>
         <div>AU</div>
         <div>{AU}</div>
