@@ -43,3 +43,19 @@
   border-bottom: 1px solid white;
   text-align: center;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .image_container {
+    height: 330px;
+    width: 330px;
+  }
+
+  .body_container {
+    padding: 1rem 3rem;
+    line-height: 1.625rem;
+  }
+
+  @media screen and (min-height: 1300px) {
+
+  }
+}
