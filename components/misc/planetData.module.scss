@@ -15,4 +15,14 @@
   .planet_info {
     font-size: 1.5rem;
   }
+
+  @media screen and (min-height: 1300px) {
+    .info_label {
+      font-size: 2.25rem;
+    }
+
+    .planet_info {
+      font-size: 1.75rem;
+    }
+  }
 }
