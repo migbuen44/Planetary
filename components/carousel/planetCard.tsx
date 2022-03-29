@@ -16,12 +16,17 @@ const PlanetCard = ({ planet } : PlanetCardProps) => {
 
   return(
     <div className={styles.card}>
-      <div className={styles.image_container}>
-          <Image src={`${imageDirectory}/${name}.png`} layout="responsive" objectFit="contain" width={100} height={100}/>
+      <div className={styles.image_section}>
+        <div className={styles.image_container}>
+            <Image src={`${imageDirectory}/${name}.png`} layout="responsive" objectFit="contain" width={100} height={100}/>
+        </div>
       </div>
       <div className={styles.planet_name}>{name}</div>
       <div className={styles.planet_data_container}>
-        <PlanetData planet={planet}/>
+        <div className={styles.planet_data_wrapper}>
+          <div className={styles.planet_name_nested}>{name}</div>
+          <PlanetData planet={planet}/>
+        </div>
       </div>
     </div>
   )
