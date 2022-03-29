@@ -6,3 +6,13 @@
   font-size: 1.125rem;
   text-decoration: underline;
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .info_label {
+    font-size: 1.75rem;
+  }
+
+  .planet_info {
+    font-size: 1.5rem;
+  }
+}
