@@ -23,6 +23,12 @@
 // }
 
 .body_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.body_wrapper {
   padding: 0.5rem 1.25rem;
   line-height: 1.625rem;
 }
@@ -57,5 +63,16 @@
 
   @media screen and (min-height: 1300px) {
 
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .image_container {
+    height: 330px;
+    width: 330px;
+  }
+
+  .body_wrapper {
+    max-width: 800px;
   }
 }

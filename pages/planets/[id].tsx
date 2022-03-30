@@ -43,7 +43,9 @@ const Planet = ({ planetData, menuBarData, cardData } : any) => {
         </div>
         <PlanetInfoSection planet={cardData} />
       </div>
-      <div className={styles.body_container} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+      <div className={styles.body_container}>
+        <div className={styles.body_wrapper} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+      </div>
     </div>
   )
 }
