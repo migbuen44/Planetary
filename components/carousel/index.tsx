@@ -10,7 +10,7 @@ const Carousel = ({ planetCardData } : CarouselProps) => {
   return (
     <div className={styles.container}>
       {/* Carousel */}
-      <ReactCardCarousel>
+      <ReactCardCarousel disable_box_shadow>
         {planetCardData.map((planet, idx) =>
           <PlanetCard planet={planet} key={`planet-${idx}`}/>
         )}
