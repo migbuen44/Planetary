@@ -17,9 +17,9 @@ const MenuBar = ({ closeMenuBar, menuBarData } : MenuBarProps) => {
         <div className={styles.planet_names_container}>
           {menuBarData.map(planet =>
             (<Link href={`/planets/${planet.toLowerCase()}`} key={planet}>
-              <div className={styles.planet_name} onClick={()=>closeMenuBar()}>
+              <a className={styles.planet_name} onClick={()=>closeMenuBar()}>
                 <div>{planet}</div>
-              </div>
+              </a>
             </Link>)
           )}
         </div>
