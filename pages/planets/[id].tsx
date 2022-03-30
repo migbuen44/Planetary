@@ -36,12 +36,16 @@ const Planet = ({ planetData, menuBarData, cardData } : any) => {
   return (
     <div className={styles.container}>
       <Header menuBarData={menuBarData}/>
-      <h2 className={styles.planet_title}>{planetTitle}</h2>
-      <div className={styles.image_container}>
-        <Image src={`${imageDirectory}/${id}.png`} layout="responsive" width={100} height={100} objectFit="contain" />
+      <div className={styles.planet_title}>{planetTitle}</div>
+      <div className={styles.top_section_container}>
+        <div className={styles.image_container}>
+          <Image src={`${imageDirectory}/${id}.png`} layout="responsive" width={100} height={100} objectFit="contain" />
+        </div>
+        <PlanetInfoSection planet={cardData} />
       </div>
-      <PlanetInfoSection planet={cardData} />
-      <div className={styles.body_container} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+      <div className={styles.body_container}>
+        <div className={styles.body_wrapper} dangerouslySetInnerHTML={{__html: contentHtml}}/>
+      </div>
     </div>
   )
 }

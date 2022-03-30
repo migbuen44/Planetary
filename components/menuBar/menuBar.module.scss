@@ -10,21 +10,22 @@
 }
 
 .exit_area {
-  border: 1px white solid;
+  // border: 1px white solid;
   height: 100%;
   flex-grow: 1;
+  background: rgba(0, 0, 0, .85);
 }
 
 .menu_bar {
-  border: 1px white solid;
+  // border-left: 1px white solid;
   height: 100%;
-  background: black;
-  // padding: 1rem;
+  background: rgb(14, 14, 17);
   right: 0;
   width: 70vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem 2rem;
 }
 
 .menu_bar_title {
@@ -47,4 +48,21 @@
   border-bottom: 1px solid white;
   display: flex;
   justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .menu_bar_title {
+    font-size: 1.75rem;
+  }
+
+  .planet_name {
+    font-size: 1.625rem;
+    padding: 1.25rem;
+  }
+
+  @media screen and (min-height: 1300px) {
+
+  }
 }

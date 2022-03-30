@@ -1,3 +1,28 @@
 .planet_info {
   padding: 1rem;
 }
+
+.info_label {
+  font-size: 1.125rem;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) { // tablets
+  .info_label {
+    font-size: 1.5rem;
+  }
+
+  .planet_info {
+    font-size: 1.25rem;
+  }
+
+  @media screen and (min-height: 1300px) {
+    // .info_label {
+    //   font-size: 1.rem;
+    // }
+
+    // .planet_info {
+    //   font-size: 1.75rem;
+    // }
+  }
+}
