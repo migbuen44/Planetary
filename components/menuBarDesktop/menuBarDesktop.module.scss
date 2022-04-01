@@ -1,13 +1,10 @@
 .container {
-  // border: 1px solid white;
   display: flex;
-  // border-left: 1px solid white;
   background: var(--secondary-color);
 }
 
 .planet_name {
   padding: .75rem 0;
-  // border-right: 1px solid white;
   width: 7vw;
   text-align: center;
   color: var(--main-font-color);

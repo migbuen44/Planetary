@@ -15,8 +15,7 @@ const Header = ({ menuBarData } : HeaderProps) => {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const width = window.innerWidth; // change to screen width before deployment
-    // console.log('screenWidth: ', screenWidth);
+    const width = window.innerWidth;
     if (width >= 1024) {
       setIsDesktop(true);
     }

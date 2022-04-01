@@ -4,20 +4,17 @@
   width: 100%;
   inset: 0;
   display: flex;
-  // background: rgba(0, 0, 0, .7);
   justify-content: flex-end;
   z-index: 999;
 }
 
 .exit_area {
-  // border: 1px white solid;
   height: 100%;
   flex-grow: 1;
   background: rgba(0, 0, 0, .85);
 }
 
 .menu_bar {
-  // border-left: 1px white solid;
   height: 100%;
   background: var(--secondary-color);
   right: 0;
@@ -29,7 +26,6 @@
 }
 
 .menu_bar_title {
-  // background: grey;
   display: flex;
   width: 100%;
   justify-content: center;
