@@ -1,19 +1,16 @@
 .container {
-  // border: 1px solid white;
   display: flex;
-  // border-left: 1px solid white;
-  background: rgb(14, 14, 17);
+  background: var(--secondary-color);
 }
 
 .planet_name {
   padding: .75rem 0;
-  // border-right: 1px solid white;
   width: 7vw;
   text-align: center;
-  color: white;
+  color: var(--main-font-color);
   text-decoration: none;
 }
 
 .planet_name:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--highlight-color);
 }
