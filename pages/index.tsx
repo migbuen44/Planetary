@@ -28,6 +28,7 @@ const Home: NextPage<HomeProps> = ({ planetCardData, menuBarData }) => {
     <div className={styles.container}>
       <Head>
         <title>Planetary</title>
+        <link rel="icon" href="/icon.png" />
       </Head>
       <Header menuBarData={menuBarData}/>
       <Carousel planetCardData={planetCardData}/>
