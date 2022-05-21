@@ -1,5 +1,6 @@
 import styles from '../../styles/Planet.module.scss';
 import { getAllPlanetIds, getPlanetData, getSortedPlanetsData } from '../../lib/planets'
+import Head from 'next/head'
 import Header from '../../components/header';
 import PlanetInfoSection from '../../components/planetInfoSection'
 import Image from 'next/image'
@@ -35,6 +36,10 @@ const Planet = ({ planetData, menuBarData, cardData } : any) => {
   const planetTitle = id.replace(id[0], id[0].toUpperCase());
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Planetary</title>
+        <link rel="icon" href="/icon.png" />
+      </Head>
       <Header menuBarData={menuBarData}/>
       <div className={styles.planet_title}>{planetTitle}</div>
       <div className={styles.top_section_container}>
