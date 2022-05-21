@@ -14,11 +14,15 @@ const PlanetCard = ({ planet } : PlanetCardProps) => {
     name,
   } = planet;
 
+  const fileEndPnt = name.toLowerCase();
+
+  const imageSrc = `${imageDirectory}/${fileEndPnt}.png`
+
   return(
     <div className={styles.card}>
       <div className={styles.image_section}>
         <div className={styles.image_container}>
-            <Image src={`${imageDirectory}/${name}.png`} layout="responsive" objectFit="contain" width={100} height={100}/>
+            <Image src={imageSrc} layout="responsive" objectFit="contain" width={100} height={100} alt="planet"/>
         </div>
       </div>
       <div className={styles.planet_name}>{name}</div>
