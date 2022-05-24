@@ -20,7 +20,7 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "sass": "^1.49.9",
-    "sharp": "^0.30.5"
+    "sharp": "^0.30.4"
   },
   "devDependencies": {
     "@types/node": "17.0.18",
