@@ -7,15 +7,11 @@
 
 .menu_button {
   background: none;
-  color: white;
+  color: var(--main-font-color);
   border: none;
   padding: 0.5rem;
   width: 3rem;
 }
-
-// .bar_icon {
-//   // font-size: 1.5rem;
-// }
 
 .title {
   margin: 0;
@@ -36,9 +32,6 @@
     margin: 0;
   }
 
-  // .bar_icon {
-  //   font-size: 3rem;
-  // }
   .menu_button {
     width: 5rem;
   }
@@ -53,9 +46,6 @@
       margin: 0;
     }
 
-    // .bar_icon {
-    //   font-size: 3.5rem;
-    // }
     .menu_button {
       width: 5.25rem;
     }
